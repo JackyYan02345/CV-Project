@@ -7,16 +7,15 @@ export default function Home() {
         </p>
 
         <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-6xl">
-          Understand your game, one rally at a time.
+          JACKY IS TUFF
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          We are building tools to review tennis footage and explore
-          player movement.
+          PLACEHOLDER TEXT
         </p>
 
         <p className="mt-10 text-sm text-slate-400">
-          Video analysis features are in development.
+          IN DEV PAT
         </p>
       </div>
     </main>
