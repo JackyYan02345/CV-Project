@@ -1,0 +1,19 @@
+tracker_type: bytetrack
+
+# high-confidence detections are used for normal matching
+track_high_thresh: 0.30
+
+# lower-confidence detections can help recover a briefly lost player
+track_low_thresh: 0.10
+
+# a detection needs this confidence to begin a completely new track
+new_track_thresh: 0.35
+
+# keep a lost ID alive for 90 frames: about 3 seconds in a 30-FPS video
+track_buffer: 90
+
+# how lenient the tracker is when deciding whether two boxes are the same player
+match_thresh: 0.80
+
+# include the detector's confidence score in matching decisions
+fuse_score: True
