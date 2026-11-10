@@ -3,54 +3,24 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CourtVision AI",
-  description: "Explore tennis footage and player movement.",
+  title: "CourtVision AI — Performance, decoded.",
+  description: "Explore tennis movement, timing, and rally telemetry with CourtVision AI.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
-        <header className="border-b border-slate-800">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-            <Link
-              href="/"
-              className="text-lg font-bold tracking-tight text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400"
-            >
-              CourtVision <span className="text-lime-400">AI</span>
-            </Link>
-
-            <nav aria-label="Main navigation" className="flex gap-5 text-sm">
-              <Link
-                href="/"
-                className="text-slate-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400"
-              >
-                Home
-              </Link>
-              <Link
-                href="/dashboard"
-                className="text-slate-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400"
-              >
-                Dashboard
-              </Link>
-              <Link
-                href="/upload"
-                className="text-slate-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400"
-              >
-                Upload
-              </Link>
-            </nav>
-          </div>
+      <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <header className="floating-header">
+          <Link href="/" className="brand" aria-label="CourtVision AI home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="8" fill="#c5fb65"/><path d="M10 9H22V23H10ZM10 16H22M16 9V23" fill="none" stroke="#141a10" strokeWidth="1.5"/></svg><span>CourtVision<span className="brand-ai">AI</span></span></Link>
+          <nav aria-label="Main navigation"><Link href="/#features">Features</Link><Link href="/dashboard">Dashboard</Link><Link href="/#telemetry">Telemetry</Link><Link href="/#pricing">Pricing</Link></nav>
+          <Link href="/upload" className="header-action">Upload video <span aria-hidden="true">↗</span></Link>
         </header>
-
-        {children}
-
-        <footer className="border-t border-slate-800 px-6 py-6 text-center text-sm text-slate-400">
-          CourtVision AI · Tennis analysis in development
-        </footer>
+        <div id="main-content">{children}</div>
+        <footer className="micro-footer"><span>© 2026 CourtVision AI <span className="footer-dot">·</span> Performance, decoded.</span><Link href="/privacy">Privacy & data</Link><span className="footer-preview"><i /> Product preview</span></footer>
       </body>
     </html>
   );
 }
+
